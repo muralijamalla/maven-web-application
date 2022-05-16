@@ -1,4 +1,4 @@
-node{
+node('slaves'){
     echo "Job name is: {$env.JOB_NAME}"
     echo "Node Name is: {$env.NODE_NAME}"
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '10')), pipelineTriggers([githubPush(), pollSCM('* * * * *')])])
